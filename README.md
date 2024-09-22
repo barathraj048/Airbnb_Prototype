@@ -1,4 +1,4 @@
-# MERN Stack Airbnb Clone Project
+# MERN Stack Airbnb Prototype Project
 
 This project is a full-stack Airbnb clone built using the MERN stack (MongoDB, Express.js, React.js, Node.js). It aims to replicate some of the core features and functionalities of the Airbnb website.
 
