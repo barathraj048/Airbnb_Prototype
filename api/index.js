@@ -58,7 +58,7 @@ const getUserDataFromToken = (req) => {
 
 
 app.get("/test", (req, res) => {
-  res.json('test ok');
+  res.json('app is running');
 });
 
 app.post("/register", async (req, res) => {
@@ -330,6 +330,19 @@ app.get('/image-booked', async (req, res) => {
   } catch (error) {
     console.error('Error fetching booked place:', error);
     res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.get('/search', async (req, res) => {
+  try {
+    const { search } = req.query;
+    const searchedPlace = await placeModel.find({
+      title: search
+    });
+    res.json(searchedPlace);
+  } catch (err) {
+    console.log(`error in fetching searched member ${err}`);
+    res.status(500).json({ error: 'Internal Server Error' }); 
   }
 });
 
